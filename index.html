@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Sale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            font-family: 'Work Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <header>
+        <div class="hero min-h-screen bg-[#F9F6E2;] text-black px-40 text-center">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <img src="./images/Summer1.png" class="max-w-sm rounded-lg " />
+                <div>
+                    <h3 class="text-2xl font-medium ">---SALE FEVER---</h3>
+                    <h1 class="text-5xl font-bold my-10">Purchase TK 200 or above & get <span class="text-[#E527B2]">20%
+                            off</span></h1>
+                    <p class="py-6 inline font-medium text-2xl">Use Promo Code</p>
+                    <button class="py-2 px-4 rounded-lg bg-[#E527B2] text-white border-none font-semibold text-2xl">
+                        SELL200 </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shoping Cart Section -->
+    <section
+        class="p-0 md:py-0 md:px-0 lg:py-20 lg:px-24 bg-[#F8F8F8] flex justify-center items-center lg:justify-start lg:items-start">
+
+        <div>
+            <h1 class="text-5xl font-semibold my-9 hidden lg:visible">Kitchenware</h1>
+            <div class="flex flex-col lg:flex-row gap-4 justify-center items-center lg:justify-start lg:items-start">
+                <!-- Cart Section Right -->
+                <div class="order-1 lg:order-2 w-72">
+                    <div class="flex flex-col gap-6 relative">
+                        <div class="py-4 px-5 bg-white rounded-lg">
+                            <h1 class="text-2xl font-medium mb-4">Have coupon?</h1>
+                            <div class="flex">
+                                <input id="coupon-input"
+                                    class="w-full text-rgba(17, 17, 17, 0.40); text-xl py-2 px-3 rounded-s-lg border-[#11111126] border-2 "
+                                    type="text" placeholder="Coupon code">
+                                <button id="apply-btn"
+                                    class="text-white bg-[#E527B2] font-semibold text-xl py-2 px-4 border-[#E527B2] border-2 rounded-e-lg -ml-3"
+                                    disabled onclick="discountMaker()">Apply</button>
+                            </div>
+                        </div>
+                        <div class="py-5 px-6 bg-white rounded-lg">
+                            <div id="product-list">
+
+                            </div>
+                            <hr class=" mx-auto my-11">
+                            <div>
+                                <p class="text-2xl font-medium" id="total-price">Total price: <span
+                                        class="text-[#11111180] "><span id="total-price-value">00</span>TK</span></p>
+                                <p class="text-2xl font-medium my-5" id="discount-price">Discoun:<span
+                                        class="text-[#11111180] "><span id="discount-price-value">00</span>TK</span></p>
+                                <p class="text-2xl font-medium" id="final-price">Total:<span
+                                        class="text-[#11111180] "><span id="final-price-value">00</span>TK</span></p>
+                            </div>
+                            <hr class=" mx-auto mt-11">
+                            <button
+                                class="text-white bg-[#E527B2] font-semibold text-xl py-2 px-4 border-[#E527B2] border-2 w-full  rounded-lg relative top-11  ">
+                                Make Purchase
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- left  -->
+
+                <div class="lg:order-1 order-2">
+                    <div>
+                        <h1 class="text-5xl font-semibold my-9 visible lg:hidden">Kitchenware</h1>
+                        <!-- card container -->
+                        <div
+                            class="flex gap-4 flex-col lg:flex-row justify-center items-center lg:justify-start lg:items-start">
+                            <div class="flex flex-col lg:flex-row gap-3" onclick="eventHaldler(this)">
+                                <div class="card w-64 bg-base-100 shadow-xl  h-[315px]">
+                                    <figure class="p-4">
+                                        <div class="bg-[#1111110D] bg-cover w-full  h-[180px] rounded-lg">
+                                            <img class=" p-6 mx-auto" src="./images/prod1.png" alt="Shoes" />
+                                        </div>
+
+                                    </figure>
+                                    <div class="rating mx-auto mt-2">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400"
+                                            checked />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                    </div>
+                                    <div class="card-body items-center text-center p-0 ">
+                                        <h2 class="card-title">K. Accessories</h2>
+                                        <p class="text-[#11111180] text-xl"><span>39.00</span> TK</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-3" onclick="eventHaldler(this)">
+                                <div class="card w-64 bg-base-100 shadow-xl  h-[315px]">
+                                    <figure class="p-4">
+                                        <div class="bg-[#1111110D] bg-cover w-full  h-[180px] rounded-lg">
+                                            <img class=" p-6 mx-auto" src="./images/prod2.png" alt="Shoes" />
+                                        </div>
+
+                                    </figure>
+                                    <div class="rating mx-auto mt-2">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400"
+                                            checked />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                    </div>
+                                    <div class="card-body items-center text-center p-0 ">
+                                        <h2 class="card-title">Chopping Board</h2>
+                                        <p class="text-[#11111180] text-xl"><span>25.00</span> TK</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-3" onclick="eventHaldler(this)">
+                                <div class="card w-64 bg-base-100 shadow-xl  h-[315px]">
+                                    <figure class="p-4">
+                                        <div class="bg-[#1111110D] bg-cover w-full  h-[180px] rounded-lg">
+                                            <img class=" p-6 mx-auto" src="./images/prod3.png" alt="Shoes" />
+                                        </div>
+
+                                    </figure>
+                                    <div class="rating mx-auto mt-2">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400"
+                                            checked />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                    </div>
+                                    <div class="card-body items-center text-center p-0 ">
+                                        <h2 class="card-title">Home Cooker</h2>
+                                        <p class="text-[#11111180] text-xl"><span>49.00</span> TK</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sportswear  -->
+                    <div>
+                        <h1 class="text-5xl font-semibold my-9">Sportswear</h1>
+                        <!-- card container -->
+                        <div
+                            class="flex gap-4 flex-col lg:flex-row justify-center items-center lg:justify-start lg:items-start">
+                            <div class="flex gap-3" onclick="eventHaldler(this)">
+                                <div class="card w-64 bg-base-100 shadow-xl  h-[315px]">
+                                    <figure class="p-4">
+                                        <div class="bg-[#1111110D] bg-cover w-full  h-[180px] rounded-lg">
+                                            <img class=" p-6 mx-auto" src="./images/prod4.png" alt="Shoes" />
+                                        </div>
+
+                                    </figure>
+                                    <div class="rating mx-auto mt-2">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400"
+                                            checked />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                    </div>
+                                    <div class="card-body items-center text-center p-0 ">
+                                        <h2 class="card-title">Sports Back Cap</h2>
+                                        <p class="text-[#11111180] text-xl"><span>49.00</span> TK</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-3" onclick="eventHaldler(this)">
+                                <div class="card w-64 bg-base-100 shadow-xl  h-[315px]">
+                                    <figure class="p-4">
+                                        <div class="bg-[#1111110D] bg-cover w-full  h-[180px] rounded-lg">
+                                            <img class=" p-6 mx-auto" src="./images/prod5.png" alt="Shoes" />
+                                        </div>
+
+                                    </figure>
+                                    <div class="rating mx-auto mt-2">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400"
+                                            checked />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                    </div>
+                                    <div class="card-body items-center text-center p-0 ">
+                                        <h2 class="card-title">Full Jersey Set</h2>
+                                        <p class="text-[#11111180] text-xl"><span>69.00</span> TK</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-3" onclick="eventHaldler(this)">
+                                <div class="card w-64 bg-base-100 shadow-xl  h-[315px]">
+                                    <figure class="p-4">
+                                        <div class="bg-[#1111110D] bg-cover w-full  h-[180px] rounded-lg">
+                                            <img class=" p-6 mx-auto" src="./images/prod6.png" alt="Shoes" />
+                                        </div>
+
+                                    </figure>
+                                    <div class="rating mx-auto mt-2">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400"
+                                            checked />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                    </div>
+                                    <div class="card-body items-center text-center p-0 ">
+                                        <h2 class="card-title">Sports cates</h2>
+                                        <p class="text-[#11111180] text-xl"><span>169.00</span> TK</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Furniture -->
+            <div>
+                <h1 class="text-5xl font-semibold my-9">Furniture</h1>
+                <!-- card container -->
+                <div
+                    class="flex gap-4 flex-col lg:flex-row justify-center items-center lg:justify-start lg:items-start">
+                    <div class="flex gap-3" onclick="eventHaldler(this)">
+                        <div class="card w-64 bg-base-100 shadow-xl  h-[315px]">
+                            <figure class="p-4">
+                                <div class="bg-[#1111110D] bg-cover w-full  h-[180px] rounded-lg">
+                                    <img class=" p-6 mx-auto" src="./images/prod7.png" alt="Shoes" />
+                                </div>
+
+                            </figure>
+                            <div class="rating mx-auto mt-2">
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                            </div>
+                            <div class="card-body items-center text-center p-0 ">
+                                <h2 class="card-title">Single Relax Chair</h2>
+                                <p class="text-[#11111180] text-xl"><span>185.00</span> TK</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-3" onclick="eventHaldler(this)">
+                        <div class="card w-64 bg-base-100 shadow-xl  h-[315px]">
+                            <figure class="p-4">
+                                <div class="bg-[#1111110D] bg-cover w-full  h-[180px] rounded-lg">
+                                    <img class=" p-6 mx-auto" src="./images/prod8.png" alt="Shoes" />
+                                </div>
+
+                            </figure>
+                            <div class="rating mx-auto mt-2">
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                            </div>
+                            <div class="card-body items-center text-center p-0 ">
+                                <h2 class="card-title">Children play</h2>
+                                <p class="text-[#11111180] text-xl"><span>299.00</span> TK</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-3" onclick="eventHaldler(this)">
+                        <div class="card w-64 bg-base-100 shadow-xl  h-[315px]">
+                            <figure class="p-4">
+                                <div class="bg-[#1111110D] bg-cover w-full  h-[180px] rounded-lg">
+                                    <img class=" p-6 mx-auto" src="./images/prod9.png" alt="Shoes" />
+                                </div>
+
+                            </figure>
+                            <div class="rating mx-auto mt-2">
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                            </div>
+                            <div class="card-body items-center text-center p-0 ">
+                                <h2 class="card-title">Flexible Sofa</h2>
+                                <p class="text-[#11111180] text-xl"><span>339.00</span> TK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
